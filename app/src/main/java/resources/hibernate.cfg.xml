@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+    <property name="hibernate.dialect">
+        utilities.SQLiteDialect
+    </property>
+
+    <property name="hibernate.connection.driver_class">
+        org.sqlite.JDBC
+    </property>
+
+    <property name="hibernate.connection.url">
+        jdbc:sqlite:D:/!java/word-games-db-sqlite.db
+    </property>
+
+<!--    <property name="hbm2ddl.auto">-->
+<!--        update-->
+<!--    </property>-->
+
+    <property name="show_sql">
+        false
+    </property>
+
+    <property name="connection.pool_size">
+        1
+    </property>
+
+    <property name="hibernate.default_schema">
+        main
+    </property>
+
+        <property name="hibernate.connection.release_mode">auto</property>
+        <property name="current_session_context_class">thread</property>
+        <property name="hibernate.connection.autoReconnect">true</property>
+
+
+        <mapping class="words.Word"/>
+
+<!--        <mapping class="utilities.Cognate"/>-->
+
+        <mapping class="words.primary.Adjective"/>
+        <mapping class="words.primary.Adverb"/>
+        <mapping class="words.primary.Participle"/>
+        <mapping class="words.primary.Numeral"/>
+        <mapping class="words.primary.Noun"/>
+        <mapping class="words.primary.Verb"/>
+        <mapping class="words.primary.ExtraParticiple"/>
+
+        <mapping class="words.secondary.Particle"/>
+        <mapping class="words.secondary.Interjection"/>
+        <mapping class="words.secondary.Conjunction"/>
+        <mapping class="words.secondary.Predicate"/>
+        <mapping class="words.secondary.Pretext"/>
+        <mapping class="words.secondary.Parenthesis"/>
+        <mapping class="words.secondary.Pronoun"/>
+        <mapping class="words.secondary.PronNoun"/>
+        <mapping class="words.secondary.PronAdj"/>
+        <mapping class="words.secondary.PronAdv"/>
+
+</session-factory>
+
+</hibernate-configuration>

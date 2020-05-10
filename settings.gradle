@@ -1,0 +1,2 @@
+rootProject.name='WordGames5'
+include ':app'
